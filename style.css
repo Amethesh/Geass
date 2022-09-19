@@ -9,6 +9,7 @@
     --gray: #C2C2C2;
 }
 
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +18,8 @@
 
 body{
     background-color: var(--dark) ;
-    color: var(--light) ;    
+    color: var(--light) ;  
+    
 } 
 
 /* Link Reset */
@@ -44,7 +46,7 @@ nav{
     padding: 7px 12px;
     max-width: 1500px;
     margin: 0 auto;
-    /* background-color: #C2C2C2; */
+    /* background-color: var(--dark); */
 }
 /* Nav Bar Start */
 /* Navbar initial Styling */
@@ -182,6 +184,10 @@ nav ul .search-bar span{
     text-align: right;    
 }
 
+/* Nav Bar Ending */
+
+
+/* Scroll items start */
 .scroll-container{
     /* min-width: none; */
     display: flex;
@@ -228,9 +234,51 @@ nav ul .search-bar span{
     color: var(--primary);
     cursor: pointer;
 }
-/* Nav Bar Ending */
-/*  
 
+/* Scroll items end */
+
+.auto-scroll{
+    margin: .7rem auto;
+    max-width: 1500px;
+    height: 300px;
+    width: 90vw;
+    border-radius: 30px;
+    background-color: aquamarine;
+}
+
+.large-card-bg{    
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
+    height: auto;
+    background-color: var(--light);
+    background-image:url(./background/86-EIGHTY-SIX-16x9-1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: inherit;
+    color: var(--dark);
+    font-family: 'Secular One',sans-serif;
+
+}
+.auto-scroll .large-card-bg .large-shade{
+    width: 100%;
+    border-radius: inherit;
+    background-color: hsla(240, 2%, 9%, 0.633);
+    /* background-color: aliceblue */;
+}
+.large-card-bg .poster {
+    padding: .3rem;
+    width: 130px;
+    height: 200px;    
+    z-index: 56;
+}
+.auto-scroll .large-card-bg .poster img{
+    width: 100%;
+    border-radius: 25px;
+    
+}
+/* 
 | Breakpoint | Description |
 | -------- | ---------- |
 | < 640px | xs |
@@ -385,9 +433,9 @@ nav ul .search-bar span{
         right: 20px;
                 
     }
-    /* .scroll-items{
-        padding: 0 40px;
-    } */
+    .scroll-items{
+        display: none;
+    }
 }
 /* Navbar styling for Large PC and Laptop */
 
@@ -450,9 +498,9 @@ nav ul .search-bar span{
                 
     }
 
-    /* .scroll-items{
-        padding: 0 30px;
-    } */
+    .scroll-items{
+        display: none;
+    }
 }
 
 
