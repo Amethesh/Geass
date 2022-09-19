@@ -240,10 +240,12 @@ nav ul .search-bar span{
 .auto-scroll{
     margin: .7rem auto;
     max-width: 1500px;
-    height: 300px;
+    height: 250px;
     width: 90vw;
     border-radius: 30px;
-    background-color: aquamarine;
+    box-shadow: 5px 5px 5px black;
+    
+   /*  background-color: aquamarine; */
 }
 
 .large-card-bg{    
@@ -251,31 +253,58 @@ nav ul .search-bar span{
     flex-direction: row;
     justify-content: space-between;
     align-items: center; */
-    height: auto;
+    box-shadow: -5px -5px 15px var(--light);
+    height: inherit;
     background-color: var(--light);
     background-image:url(./background/86-EIGHTY-SIX-16x9-1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: inherit;
-    color: var(--dark);
+    color: var(--light);
     font-family: 'Secular One',sans-serif;
 
 }
 .auto-scroll .large-card-bg .large-shade{
+    height: inherit;
     width: 100%;
     border-radius: inherit;
-    background-color: hsla(240, 2%, 9%, 0.633);
+    background-color: hsla(240, 2%, 9%, 0.8);
+    /* display: flex;
+    align-items: center; */
     /* background-color: aliceblue */;
 }
 .large-card-bg .poster {
-    padding: .3rem;
-    width: 130px;
-    height: 200px;    
-    z-index: 56;
+    
+    width: 160px;
+    height: auto;    
+    
 }
 .auto-scroll .large-card-bg .poster img{
+    padding-top: 10px;
     width: 100%;
     border-radius: 25px;
+    margin-left: 5%;    
+}
+.large-card-details{
+    padding: 20px;
+    margin-right: 0px;
+
+}
+
+.poster-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .5rem;
+    align-items: center;
+}
+
+.poster-container ul{
+    list-style: none;
+    display: inline-flex;
+    font-size: 10px;
+    gap: 10px;
     
 }
 /* 
