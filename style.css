@@ -7,6 +7,7 @@
     --dark: #161617;
     --light-dark: #313132;
     --gray: #C2C2C2;
+    --bgwhite: hsla(0, 0%, 64%,.7);
 }
 
 
@@ -205,6 +206,7 @@ nav ul .search-bar span{
     width: 100%;
     position: relative;
     font-family: 'Quicksand',sans-serif;
+    font-weight: bold;
     font-size: 15px;
     color: var(--light);
     margin: 0 auto;
@@ -218,16 +220,18 @@ nav ul .search-bar span{
     gap: 20px;
     width: max-content;
     
+    
 }
 
 .scroll-container ul span{    
     background-color: var(--light-dark);
     border-radius: 12px;
     justify-content: space-evenly;
+    /* border: 1px solid var(--bgwhite); */
 }
 
 .scroll-container ul span li{
-    padding: 10px;
+    padding: 8px 10px;
 }
 
 .scroll-container ul span :is(li:hover , li:focus,li:active){
@@ -235,25 +239,24 @@ nav ul .search-bar span{
     cursor: pointer;
 }
 
-/* Scroll items end */
 
+
+/* Scroll items end */
+/* Large Auto Scroll Items Start*/
 .auto-scroll{
     margin: .7rem auto;
     max-width: 1500px;
-    height: 250px;
-    width: 90vw;
+    /* height: 240px; */
+    height: 29vh;
+    width: 85vw;
     border-radius: 30px;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 10px black;
     
    /*  background-color: aquamarine; */
 }
 
 .large-card-bg{    
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; */
-    box-shadow: -5px -5px 15px var(--light);
+    box-shadow: -3px -3px 10px var(--bgwhite);
     height: inherit;
     background-color: var(--light);
     background-image:url(./background/86-EIGHTY-SIX-16x9-1.webp);
@@ -268,14 +271,14 @@ nav ul .search-bar span{
     height: inherit;
     width: 100%;
     border-radius: inherit;
-    background-color: hsla(240, 2%, 9%, 0.8);
+    background-color: rgba(0, 0, 0, 0.80);
     /* display: flex;
     align-items: center; */
     /* background-color: aliceblue */;
 }
 .large-card-bg .poster {
     
-    width: 160px;
+    width: 140px;
     height: auto;    
     
 }
@@ -295,7 +298,7 @@ nav ul .search-bar span{
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: .5rem;
     align-items: center;
 }
@@ -307,6 +310,26 @@ nav ul .search-bar span{
     gap: 10px;
     
 }
+/* Button Style */
+.auto-scroll .readnow{
+    border-style: none;
+    background-color: var(--primary);
+    font-family: "Quicksand",monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--light);
+    border-radius: 50px;
+    width: 100px;
+    height: 36px;
+    padding: .5em;
+    cursor: pointer;
+}
+
+
+/* Large Auto Scroll Items End*/
+
+/*Responsive Site functions*/
+
 /* 
 | Breakpoint | Description |
 | -------- | ---------- |
@@ -317,7 +340,6 @@ nav ul .search-bar span{
 | >=1280px | xl |
 | >=1536px | 2xl |
 */
-
 
 /* Navbar styling for Small tablet */
 
