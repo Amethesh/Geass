@@ -7,7 +7,8 @@
     --dark: #161617;
     --light-dark: #313132;
     --gray: #C2C2C2;
-    --bgwhite: hsla(0, 0%, 64%,.7);
+    --lightshadow: hsla(0, 0%, 64%,.7);
+    --white60: hsla(0, 0%, 96%,.8);
 }
 
 
@@ -227,7 +228,7 @@ nav ul .search-bar span{
     background-color: var(--light-dark);
     border-radius: 12px;
     justify-content: space-evenly;
-    /* border: 1px solid var(--bgwhite); */
+    /* border: 1px solid var(--lightshadow); */
 }
 
 .scroll-container ul span li{
@@ -256,7 +257,7 @@ nav ul .search-bar span{
 }
 
 .large-card-bg{    
-    box-shadow: -3px -3px 10px var(--bgwhite);
+    box-shadow: -3px -3px 10px var(--lightshadow);
     height: inherit;
     background-color: var(--light);
     background-image:url(./background/86-EIGHTY-SIX-16x9-1.webp);
@@ -272,44 +273,92 @@ nav ul .search-bar span{
     width: 100%;
     border-radius: inherit;
     background-color: rgba(0, 0, 0, 0.80);
-    /* display: flex;
-    align-items: center; */
-    /* background-color: aliceblue */;
 }
-.large-card-bg .poster {
-    
-    width: 140px;
-    height: auto;    
-    
-}
+
 .auto-scroll .large-card-bg .poster img{
     padding-top: 10px;
     width: 100%;
     border-radius: 25px;
-    margin-left: 5%;    
-}
-.large-card-details{
-    padding: 20px;
-    margin-right: 0px;
-
+    margin-left: 8%;    
 }
 
-.poster-container {
+/* ------------------Using Grid------------------------ */
+
+.auto-scroll .poster-container{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: .5rem;
-    align-items: center;
+    justify-items: center;
+    
+}
+
+.large-card-bg .poster {    
+    width: 140px;
+    /* width: inherit; */
+    height: auto;  
+    /* background: #EF5A63;  */ 
+    align-self: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4 ; 
+}
+
+.large-card-details-1{
+    grid-row: 1 / 2;
+    grid-column: 2 / 2;
+    align-self: end;
+}
+
+.large-card-details-2{
+    grid-row: 2 / 3;
+    grid-column: 2 / 2;
+    align-self: end;
+    justify-self: center;      
+    
+}
+
+.large-card-details-3{
+    grid-column: 2 / 2;
+    grid-row: 3 / 3;
+    align-self: center;
+    text-align: center; /* To center the Button*/ 
+    box-shadow: -2px -2px 10px var(--primary);
+    border-radius: 50px;
+}
+
+.large-card-details-1 h3{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.large-card-details-2 .status{
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.large-card-details-2 .volume{
+    color: var(--white60);
+    font-size: 12px;
+    padding-left: 5px;
+}
+.auto-scroll .poster-container p{
+    display: none;
+    font-family: "Quicksand",monospace;
+    color: var(--white60);
+    font-size: 14px;
+    overflow: auto;
+    font-weight: light;
 }
 
 .poster-container ul{
     list-style: none;
     display: inline-flex;
-    font-size: 10px;
-    gap: 10px;
-    
+    font-size: 12px;
+    gap: 10px; 
+    font-family: "Quicksand",monospace;   
+    color: var(--white60) ;
 }
+
 /* Button Style */
 .auto-scroll .readnow{
     border-style: none;
@@ -318,11 +367,22 @@ nav ul .search-bar span{
     font-size: 1rem;
     font-weight: bold;
     color: var(--light);
-    border-radius: 50px;
-    width: 100px;
-    height: 36px;
+    border-radius: inherit;
+    width: 115px;
+    height: 42px;
     padding: .5em;
     cursor: pointer;
+    box-shadow: 5px 5px 10px black;
+}
+
+.auto-scroll .readnow:active{
+    box-shadow: none;
+}
+.auto-scroll .readnow:hover{
+    background-color: hsl(356, 82%, 70%);
+}
+.large-card-details-3:active{
+    box-shadow: none;
 }
 
 
@@ -487,6 +547,10 @@ nav ul .search-bar span{
     .scroll-items{
         display: none;
     }
+
+    .auto-scroll .poster-container p{
+        display: inline-flex;
+    }
 }
 /* Navbar styling for Large PC and Laptop */
 
@@ -551,6 +615,18 @@ nav ul .search-bar span{
 
     .scroll-items{
         display: none;
+    }
+
+    .auto-scroll{
+        margin: .7rem auto;
+        
+        /* height: 240px; */
+        height: 50vh;
+        width: 85vw;
+        border-radius: 30px;
+        
+        
+       /*  background-color: aquamarine; */
     }
 }
 
