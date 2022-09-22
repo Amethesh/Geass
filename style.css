@@ -9,7 +9,7 @@
     --gray: #C2C2C2;
     --lightshadow: hsla(0, 0%, 64%,.7);
     --white60: hsla(0, 0%, 96%,.8);
-    --primary-light: hsla(356, 82%, 65%,.6);
+    --primary-light: hsla(356, 82%, 65%,.8);
     
 }
 
@@ -77,7 +77,8 @@ nav{
     margin: 0 auto;
     /* background-color: var(--dark); */
 }
-/* Nav Bar Start */
+/*------------------------ Nav Bar Start------------------------ */
+
 /* Navbar initial Styling */
 nav ul{
     display: flex;
@@ -173,7 +174,7 @@ nav .misc-element .icons :is(i:hover, i:focus, i:active){
 }
 /* Placeholder Color Changer for all browser  END */
 
-/* Search Bar styling */
+/*------------------------ Search Bar styling------------------------ */
 nav ul .search-bar{
     position: relative;
     height: 40px;
@@ -267,12 +268,11 @@ nav ul .search-bar span{
     cursor: pointer;
 }
 
+/*------------------------ Scroll items end------------------------ */
 
-
-/* Scroll items end */
-/* Large Auto Scroll Items Start*/
+/* ------------------------Large Auto Scroll Items Start------------------------*/
 .auto-scroll{
-    margin: .7rem auto;
+    margin: 1rem auto;
     max-width: 1500px;
     height: 240px;
     /* height: 29vh; */
@@ -416,21 +416,16 @@ nav ul .search-bar span{
 }
 
 
-/* Large Auto Scroll Items End*/
+/*------------------------Large Auto Scroll Items End------------------------*/
 
-
+/*------------------------ Block Area Styling Start------------------------*/
 .bg-card{
-    background: linear-gradient(var(--dark), var(--light-dark));
-    background: var(--dark);
-    margin: 1.5rem auto;
-    width: 83vw;
-    height: 100vh;
-    max-width: 1500px;
-    border-radius: 25px;
-    box-shadow: 0 0 10px 5px black ;
+    /* display: none; */
+    height: 0;
+    
 }
 .bg-card .block-area{
-    padding: 15px 10px 10px 15px;
+    padding: 5px;
 }
 .list-header{
     display: flex;
@@ -442,9 +437,11 @@ nav ul .search-bar span{
 
 .header-title{
     font-family: "Secular One",monospace;
-    font-size: 16px;
+    font-size: 12px;
+    font-size: clamp(12px,1.4vw,20px);
     letter-spacing: 1.2px;
     color: var(--primary-light);
+    /* color: var(--light); */
     margin-left: 10px;
 }
 
@@ -454,15 +451,22 @@ nav ul .search-bar span{
     font-family: "Quicksand",monospace;
 }
 
-/* .novel-list{
-    display: flex;
+.novel-list{
+    display: inline-flex;
     width: 100%;
-    height: 300px;
+    height: auto;
     overflow-x: auto;
-    
-} */
+
+   /*  display: inline-block;
+    max-width: 1500px;
+    margin: 0 auto;    
+    overflow: hidden; */
+}
 .novel-card {
-    width: 150px;
+    /* width: 100px; */
+    min-width: 100px;
+    max-width: 200px;
+    width: 18%;
     margin: 0 12px 10px;
     display: inline-block;
 }
@@ -484,21 +488,31 @@ nav ul .search-bar span{
     overflow: hidden;
 }
 .novel-info h2{
-    font-size: 15px;
+    font-size: clamp(15px,1.5vw,18px);    
     font-weight: normal;  
 }
 
 .novel-info span{
     color: var(--gray);
-    font-size: 15px;
+    /* font-size: 10px; */
+    font-size: clamp(14px, 1.2vw,20px); 
 }
+
 .novel-card .list-poster img{
     width: 100%;
+    aspect-ratio: .7 / 1 ;
+    background-size: cover;
     border-radius: inherit;
     box-shadow: 5px 5px 5px black;
 }
 
-/*Responsive Site functions*/
+.novel-card .list-poster :hover{
+    box-shadow: none;
+}
+/*------------------------ Block Area Styling End------------------------*/
+
+
+/*------------------------Responsive Site functions------------------------*/
 
 /* 
 | Breakpoint | Description |
@@ -815,6 +829,98 @@ nav ul .search-bar span{
     }
 
     
+
+
+    .bg-card{        
+        height: 100vh;
+        background: linear-gradient(var(--dark), var(--light-dark));
+        background: var(--dark);
+        margin: 1.5rem auto;
+        width: 83vw;
+        max-width: 1500px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px 5px black ;
+    }
+
+    .bg-card .block-area{
+        padding: 15px 10px 10px 15px;
+    }
+    .list-header{
+        display: flex;
+        margin-bottom: 15px;    
+        width: 100%;    
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .header-title{
+        font-family: "Secular One",monospace;
+        font-size: 16px;
+        letter-spacing: 1.2px;
+        color: var(--primary-light);
+        margin-left: 10px;
+    }
+    
+    .view-more a,i{
+        font-size: 12px;
+        color: var(--gray);
+        font-family: "Quicksand",monospace;
+    }
+    
+    .novel-list{
+        display: inline-flex;
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+        overflow: hidden;
+        
+       /*  display: inline-block;
+        max-width: 1500px;
+        margin: 0 auto;    
+        overflow: hidden; */
+    }
+    .novel-card {
+        min-height: 200px;
+        max-width: 180px;
+        width: 150px;
+        width: 15%;
+        margin: 0 12px 10px;
+        display: inline-block;
+        overflow-x: auto;
+    }
+    .novel-card .list-poster{
+        width: 100%;
+        border-radius: 15px;
+    }
+    .novel-info{
+        width: 100%;
+        font-family: "Quicksand",monospace;
+        color: var(--light);
+        /* background-color: red; */
+    }
+    
+    .novel-info .card-title{
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .novel-info h2{
+        font-size: 15px;
+        font-weight: normal;  
+    }
+    
+    .novel-info span{
+        color: var(--gray);
+        font-size: 15px;
+    }
+    .novel-card .list-poster img{
+        width: 100%;
+        aspect-ratio: .7 / 1 ;
+        background-size: cover;
+        border-radius: inherit;
+        box-shadow: 5px 5px 5px black;
+    }
 }
 
 
