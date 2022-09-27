@@ -856,7 +856,7 @@ nav ul .search-bar span{
     
     .novel-list .novel-card {
         width: 185px;
-        min-width: 185px;
+        min-width: 150px;
         max-width: 185px;
         /* width: 200%; */
     }
