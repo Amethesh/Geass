@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap');
+
+:root{
+    --primary: #EF5A63;
+    --light: #F5F5F5;
+    --dark: #161617;
+    --light-dark: #313132;
+    --gray: #C2C2C2;
+    --lightshadow: hsla(0, 0%, 64%,.7);
+    --white60: hsla(0, 0%, 96%,.8);
+    --primary-light: hsla(356, 82%, 65%,.8);
+    
+}
+/* Just for Preview */
+.bg-card{
+    height: auto;
+}
+
+
+/*-------------------------Floating Button Style Start------------------------*/
+.float-btn{
+    position: fixed;
+    bottom: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: center;  
+    padding: 0 10px;
+}
+
+.float-btn .float-read{    
+    font-size: 22px;
+    font-weight: bold;
+    border-style: none;      
+    background-color: var(--primary);
+    font-family: "Quicksand",monospace;    
+    color: var(--light);
+    border-radius: 30px;
+    margin-right: 20px;
+    width: 300px;
+    height: 55px;
+}
+
+.float-btn .float-heart{
+    border-style: none;      
+    background-color: var(--light-dark);  
+    border-radius: 100px;
+    width: 55px;
+    height: 55px;
+}
+
+.float-btn .float-heart i{
+    color: var(--primary);
+    font-size: 25px;
+    text-align: center;
+    line-height: 60px;
+}
+
+
+/*-------------------------Floating Button Style End------------------------*/
+.auto-scroll .large-card-details-4{
+    grid-row: 4 / 4;
+    grid-column: 1 / 3;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.auto-scroll .readnow{    
+    border-radius: 15px;
+    width: 120px;
+    height: 42px;    
+}
+
+.auto-scroll .moreinfo{   
+    border-style: none;      
+    background-color: var(--dark);
+    font-family: "Quicksand",monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light);
+    border-radius: 15px;
+    width: 80%;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px black
+    ,-2px -2px 10px var(--lightshadow);
+}
+
+
+/*-------------------------Main Grid------------------------*/
+.main-info-grid{
+    display: grid;
+    /* width: 300px; */
+    width: 100%;
+    grid-template-areas: "info info"
+                    "synopsis synopsis"
+                    "rating synonyms"
+                    "rating audio"
+                    "chapters chapters"
+                    "genres genres"
+                    "recommended recommended";
+
+}
+
+/* Info Heading */
+.main-info-grid .info-heading{
+    font-family: "Secular One",monospace;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--primary-light);
+    font-weight: bold;
+}
+
+/*-------------------------Info------------------------*/
+.main-info-grid .info{
+    grid-area: info;
+    justify-self: start;    
+    padding: 10px;
+    /* width: minmax(min-content,max-content); */
+}
+
+.main-info-grid .info .info-line{
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-info-grid .info .info-line .info-title{
+    font-family: 'Secular One',monospace;
+    font-size: 22px;
+    font-weight: lighter;
+    color: var(--gray);
+}
+
+.main-info-grid .info .info-line .info-details{
+    font-size: 18px;
+    /* font-weight: lighter; */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+/*-------------------------Synopsis------------------------*/
+.main-info-grid .synopsis{
+    grid-area: synopsis;
+    justify-self: start;
+    font-family: "Secular One",monospace;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+
+.main-info-grid .synopsis p{
+    font-family: "Quicksand",monospace;
+    font: bold;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/*-------------------------Genres------------------------*/
+.main-info-grid .genres{
+    grid-area: genres;
+    justify-self: start;
+    font-family: "Secular One",monospace;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+
+.main-info-grid .genres .genres-image-list{
+    display: inline-flex;
+    width: 100%;
+    overflow-x: auto;    
+} 
+
+.main-info-grid .genres .genres-image{
+    padding: 10px;    
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.main-info-grid .genres .genres-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+/*-------------------------rating------------------------*/
+.main-info-grid .rating{
+    grid-area: rating;
+    justify-self: start;
+    font-family: "Secular One",monospace;
+    letter-spacing: 1px;
+    padding: 10px 15px 10px 20px;
+}
+
+.main-info-grid .rating .rating-box{
+    background-color: var(--light-dark);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px black
+    ,-2px -2px 10px var(--lightshadow);
+}
+
+.rating .rating-box div{
+    font-size: 16px;
+    font-family: "Quicksand",monospace;
+    font-weight: bold;
+    color: var(--light);
+    padding-bottom: 10px;
+}
+
+.rating .rating-box div i{
+    color: var(--primary-light);
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+/*-------------------------Synonyms------------------------*/
+.main-info-grid .synonyms{
+    grid-area: synonyms;
+    justify-self: start;
+    font-family: "Secular One",monospace;
+    padding: 10px 15px 10px 20px;
+    
+}
+
+/* Scroll Box */
+.scroll-box{
+    min-width: 100px;
+    max-width: 200px;
+    overflow: scroll;
+}
+
+.scroll-box ul span{
+    background-color: var(--light-dark);
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+
+.main-info-grid .scroll-box ul{
+    list-style: none;
+    color: var(--light);
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    font-size: 14px;
+}
+
+.scroll-box ul li{
+    padding: 8px 10px;
+}
+
+/*-------------------------Audio Info------------------------*/
+.main-info-grid .audio-info{
+    grid-area: audio;
+    justify-self: start;
+    font-family: "Secular One",monospace;
+    padding: 10px 15px 10px 20px;
+}
+
+/*-------------------------Chapters List------------------------*/
+.main-info-grid .chapters{
+    grid-area: chapters;
+}
+
+
+
+
+/*-------------------------Recommended------------------------*/
+.main-info-grid .recommended{
+    grid-area: recommended;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1040px){
+
+    .auto-scroll .large-card-details-4{
+        grid-row: 2 / 2;
+        grid-column: 3 / 3;
+        align-self: start;
+        justify-self: center;
+        margin-left: 100px;
+    }
+
+    .auto-scroll .readnow{        
+        border-radius: 15px;
+        width: 180px;
+        height: 55px;        
+    }
+
+    .auto-scroll .moreinfo{
+        display: inline;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 15px;
+        width: 180px;
+        height: 55px;
+        padding: .5em;
+        box-shadow: 5px 5px 10px black
+    ,-2px -2px 10px var(--lightshadow);
+    }
+
+
+}
