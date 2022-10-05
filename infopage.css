@@ -10,7 +10,7 @@
     --gray: #C2C2C2;
     --lightshadow: hsla(0, 0%, 64%,.7);
     --white60: hsla(0, 0%, 96%,.8);
-    --primary-light: hsla(356, 82%, 65%,.8);
+    --primary-light: hsla(356, 82%, 65%,.6);
     
 }
 /* Just for Preview */
@@ -27,6 +27,7 @@
     width: 100%;
     justify-content: center;  
     padding: 0 10px;
+    z-index: 99;
 }
 
 .float-btn .float-read{    
@@ -93,16 +94,17 @@
 
 /*-------------------------Main Grid------------------------*/
 .main-info-grid{
+    margin-top: 20px;
     display: grid;
     /* width: 300px; */
     width: 100%;
+    grid-template-columns: .5fr 1fr;
     grid-template-areas: "info info"
                     "synopsis synopsis"
-                    "rating synonyms"
-                    "rating audio"
-                    "chapters chapters"
-                    "genres genres"
-                    "recommended recommended";
+                    "rating genres"
+                    "rating genres"
+                    "synonyms synonyms"
+                    "audio audio";
 
 }
 
@@ -112,13 +114,14 @@
     letter-spacing: 1px;
     margin-bottom: 8px;
     color: var(--primary-light);
+    font-size: 22px;
     font-weight: bold;
 }
 
 /*-------------------------Info------------------------*/
 .main-info-grid .info{
     grid-area: info;
-    justify-self: start;    
+    /* justify-self: center;     */
     padding: 10px;
     /* width: minmax(min-content,max-content); */
 }
@@ -151,7 +154,7 @@
 /*-------------------------Synopsis------------------------*/
 .main-info-grid .synopsis{
     grid-area: synopsis;
-    justify-self: start;
+    /* justify-self: center; */
     font-family: "Secular One",monospace;
     letter-spacing: 1px;
     padding: 10px;
@@ -169,23 +172,26 @@
 /*-------------------------Genres------------------------*/
 .main-info-grid .genres{
     grid-area: genres;
-    justify-self: start;
+    /* justify-self: center; */
     font-family: "Secular One",monospace;
     letter-spacing: 1px;
     padding: 10px;
 }
 
 .main-info-grid .genres .genres-image-list{
-    display: inline-flex;
-    width: 100%;
-    overflow-x: auto;    
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(80px,1fr));    
+    height: 180px;
+    overflow-y: auto; 
+    gap: 5px;   
 } 
 
 .main-info-grid .genres .genres-image{
-    padding: 10px;    
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
+    /* padding: 10px;     */
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    margin-bottom: 10px;
 }
 
 .main-info-grid .genres .genres-image img{
@@ -198,7 +204,7 @@
 /*-------------------------rating------------------------*/
 .main-info-grid .rating{
     grid-area: rating;
-    justify-self: start;
+    justify-self: center;
     font-family: "Secular One",monospace;
     letter-spacing: 1px;
     padding: 10px 15px 10px 20px;
@@ -229,17 +235,22 @@
 /*-------------------------Synonyms------------------------*/
 .main-info-grid .synonyms{
     grid-area: synonyms;
-    justify-self: start;
+    /* justify-self: center; */
     font-family: "Secular One",monospace;
-    padding: 10px 15px 10px 20px;
+    padding: 10px;
     
 }
 
 /* Scroll Box */
 .scroll-box{
-    min-width: 100px;
-    max-width: 200px;
-    overflow: scroll;
+    /* min-width: 100px;
+    max-width: 200px; */
+    width: 90vw;
+    overflow-x: auto;
+}
+
+.scroll-box::-webkit-scrollbar{
+    width: 0;
 }
 
 .scroll-box ul span{
@@ -258,29 +269,152 @@
 }
 
 .scroll-box ul li{
-    padding: 8px 10px;
+    padding: 8px 8px;
 }
 
 /*-------------------------Audio Info------------------------*/
 .main-info-grid .audio-info{
     grid-area: audio;
-    justify-self: start;
+    /* justify-self: center; */
     font-family: "Secular One",monospace;
-    padding: 10px 15px 10px 20px;
+    padding: 10px;
 }
 
 /*-------------------------Chapters List------------------------*/
-.main-info-grid .chapters{
-    grid-area: chapters;
+.chapters{    
+    padding: 10px;
+}
+
+.chapters h2{
+    font-family: "Secular One",monospace;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--primary-light);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+.chapters .scroll-volume{
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.chapters .scroll-volume ul{
+    list-style: none;
+    font-size: 14px;
+    font-family: 'QuickSand',monospace;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 15px;
+    width: max-content;
+    white-space: nowrap;
+
+}
+
+.chapters .scroll-volume span{
+    background-color: var(--light-dark);
+    border-radius: 10px;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.chapters .scroll-volume span li{
+    padding: 8px 10px;
+}
+
+.chapters .scroll-volume ul :is(span:hover , span:focus,span:active){
+    background-color: var(--primary-light);
+}
+
+.chapters .chapter-list{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); */
+}
+
+.chapter-list ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+}
+
+.chapter-list ul li{
+    background-color: var(--light-dark);
+    border-radius: 11px;
+    margin: 10px;
+    padding: 20px 15px 15px 20px;
+    box-shadow: 3px 3px 10px black;    
+    box-shadow: 5px 5px 8px black
+    ,-2px -2px 5px var(--lightshadow);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chapter-list ul li span{
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'QuickSand',monospace;
+    font-family: 'Secular One',monospace;
+    font-weight: lighter;
+    color: var(--light);
+}
+
+.chapter-list ul li .chapter-no{
+    color: var(--gray);
+}
+
+.chapter-list ul li .chapter-name{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.chapter-list ul li span i{
+    color: var(--gray);
+    font-size: 20px;
+}
+
+
+.chapter-list ul :is(li:hover , li:focus,li:active){
+    background-color: var(--primary-light);
+    box-shadow: 5px 5px 10px black
+    ,-2px -2px 8px var(--primary);
 }
 
 
 
 
 /*-------------------------Recommended------------------------*/
-.main-info-grid .recommended{
-    grid-area: recommended;
+.recommended{    
+    /* padding: 10px; */
 }
+
+.bg-card .block-area {
+    padding: 10px;
+}
+
+.header-title{
+    /* margin-left: -10px ; */
+}
+.header-title h2{
+    
+    /* color: var(--primary-light);
+    font-weight: bold;
+    font-size: 20px; */
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: none;
+}
+
+
 
 
 
@@ -317,5 +451,69 @@
     ,-2px -2px 10px var(--lightshadow);
     }
 
+    .main-info-grid .synopsis{
+        display: none;
+    }
 
+}
+
+
+
+@media screen and (min-width: 1334px){
+
+
+    .float-btn{
+        display: none;
+    }
+
+    .main-info-grid{
+        /* min-width: 0px; */
+        grid-template-columns: minmax(300px,600px) minmax(200px, 300px) minmax(300px,600px);
+        grid-template-areas: 
+                        "genres rating info"
+                        "synonyms rating audio";
+    
+    }
+
+    .main-info-grid .info-heading{
+        margin-bottom: 8px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .main-info-grid .rating{
+        width: 90%;
+    }
+    .main-info-grid .rating .rating-box{
+        padding: 20px 20px;
+        /* text-align: center; */
+    }
+
+    .main-info-grid .rating .rating-box h2{
+        text-align: center;
+    }
+
+    .rating .rating-box div{
+        font-size: 22px;
+        margin-left: 20px;
+    }
+
+    .rating .rating-box div i{
+        font-size: 22px;
+        padding-top: 10px;
+        padding-left: 3px;
+    }
+
+    .main-info-grid .genres .genres-image-list{
+        grid-template-columns: repeat( auto-fit, minmax(120px, 1fr)); 
+        height: 140px;   
+           
+    } 
+
+    .main-info-grid .genres .genres-image{
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
 }
