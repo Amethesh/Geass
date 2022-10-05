@@ -133,11 +133,12 @@
     border-radius: inherit;
 }
 
-.genre-card > .blur-shade {
+.blur-shade {
     background-color: var(--dark);
     position: absolute;
     top: 0;
     width: 100%;
+    height: 100%;
     
     
     z-index: 50;
@@ -156,8 +157,88 @@
     transform: translate(-50%, 100%);
 }
 
+/* view-novel styles */
+
+.view-novel-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.novel-bg-card {
+    position: relative;
+    aspect-ratio: 4/3;
+    height: clamp(200px, 47vw, 400px); /*If necessary change height on media query */ 
+}
+
+.cover-img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-image: url(Covers/2044027.jpg);
+}
+
+.bg-card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    top: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1.5fr 1.25fr 0.75fr 0.75fr;
+    grid-template-areas: 
+                        "img title"
+                        "img audio"
+                        "img icons"
+                        "read-now icons";
+}
+
+.bg-card-content-img {
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
+    /* width: 100%;
+    height: 100%; */
+    /* margin: .25rem auto; */
+}
+
+.bg-card-content-img > img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.bg-card-content-read-now {
+    grid-area: read-now;
+
+    margin: auto;
+}
+
+.bg-card-content-title {
+    grid-area: title;
+
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    /* justify-self: center;
+    align-self: center; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bg-card-content-audio {
+    grid-area: audio;
+}
+
+.bg-card-content-icons {
+    grid-area: icons;
+}
 
 @media screen and (min-width: 350px) and (max-width: 440px){    
     .shadow-box {
