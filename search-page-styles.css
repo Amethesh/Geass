@@ -185,6 +185,7 @@
     height: 100%;
     z-index: 100;
     top: 0;
+    padding: 0 clamp(10px, 11vw, 500px);
 
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -240,6 +241,16 @@
 
 .bg-card-content-audio {
     grid-area: audio;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.bg-card-content-audio > .progress-bar {
+    width: 80%;
+    min-width: 270px;
+    height: 3px;
+    background-color: white;
 }
 
 .bg-card-content-icons {
@@ -279,6 +290,14 @@
     font-size: clamp(25px, 2vw, 35px);
 }
 
+.novel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+    height: 6rem;
+}
+
 @media screen and (max-width: 450px){    
     .shadow-box {
         margin: 0 .5rem;
@@ -301,6 +320,7 @@
     .bg-card-content {
         height: 100%;
         grid-template-columns: none;
+        /* padding: none; */
         /* grid-template-rows: minmax(220px, 2fr) minmax(55px, 0.5fr) minmax(55px, 0.5fr) minmax(55px, 0.5fr); */
         grid-template-rows: 2fr 0.5fr 0.5fr 0.5fr;
         grid-template-areas: "img"
@@ -323,8 +343,10 @@
 
 }
 
-@media screen and (min-width: 440px) and (max-width: 1080px) {
-   
+@media screen and (max-width: 1040px) {
+    .bg-card-content {
+        padding: 0;
+    }
 }
 
 /* @media screen and (min-width: 766px) {
